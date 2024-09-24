@@ -1,0 +1,26 @@
+//Program to calculate the Simple Interest of HELB loan
+/*
+Program to calculate simple interest 
+Accounts Manager: Adrian Mwangi 
+Registration number:CT101/G/22872/24
+Date:21/9/2024
+*/
+//preprocessor directive - scanf() , printf()
+#include<stdio.h>
+int main () {
+    // Decleration and initialization 
+    float principal ,rate,time, interest;
+    // Input principal amount, rate of interest and time period 
+    printf("Enter the principal amount:\n");
+    scanf("%.2f\n",& principal );
+    printf("Enter the rate of interest:\n");
+    scanf("%f\n",&rate);
+    printf("Enter the time period in years:\n");
+    scanf("%f\n",&time);
+    //Calculate the Simple Interest 
+    interest = (principal  * rate * time) / 100;
+    //Output the results 
+    printf("Simple Interest = %.2f\n", interest);
+    
+    return 0;
+} 
