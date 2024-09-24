@@ -1,0 +1,31 @@
+//Program to calculate the Compound Interest of Monthly Mortgages 
+/*
+Program to calculate compound interest 
+Accounts Manager: Adrian Mwangi 
+Registration number:576921
+Date:21/9/2024
+*/
+//preprocessor directive - scanf() , printf()
+#include<stdio.h>
+#include<math.h>
+int main () {
+    // Decleration and initialization 
+    double principal ,rate,time, compoundinterest;
+    int a;
+    // Input principal amount, rate of interest  time period  and number of times interest is compounded per year
+    printf("Enter the principal amount:\n");
+    scanf("%.lf\n",& principal );
+    printf("Enter the annual rate of interest (in percentage):\n");
+    scanf("%lf\n",&rate);
+    printf("Enter the time period in years:\n");
+    scanf("%lf\n",&time);
+    printf("Enter the number of times interest is compounded per year\n");
+    scanf("%d\n",&a);
+    //Calculate the Compound Interest 
+    compoundinterest = principal * pow(1+rate / (a +100)) ,a * time;
+    //Output the results 
+    printf("Compound Interest = %.2lf\n", compoundinterest);
+    printf("Total Amount = %.2lf\n", compoundinterest);
+    
+    return 0;
+}    
