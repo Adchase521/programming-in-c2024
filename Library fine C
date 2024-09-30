@@ -1,0 +1,38 @@
+//Program to calculate the fine of overdue library books.
+/*
+Program to calculate the fine for overdue library books.
+Librarian: Lex Blaise 
+Date : 30/9/2024
+*/
+//preprocessor directive -  scanf() ,printf();
+#include<stdio.h>
+int main () {
+    int bookID,duedate,currentdate,daysoverdue;
+    //Input book ID ,due date , current date 
+    printf("Enter bookID:");
+    scanf("%d",&bookID);
+    printf("Enter duedate:");
+    scanf("%d",&duedate);
+    printf("Enter currentdate:");
+    scanf("%d",&currentdate);
+    int finerate;
+    int fineamount;
+    //Calculate days overdue 
+    daysoverdue = currentdate - duedate;
+    //Determine fine rate and calculate fine amount
+    if (daysoverdue <=7){finerate=20;}
+    else if(daysoverdue <=14) { finerate=50;}
+    else{finerate=100;}
+     //calculate the fineamount
+     fineamount = daysoverdue * finerate;
+     //Display the results 
+     printf("bookID:%d\n",bookID);
+     printf("duedate:%d\n",duedate);
+     printf("currentdate:%d\n",currentdate);
+     printf("daysoverdue:%d\n",daysoverdue);
+     printf("finerate:%d\n",finerate);
+     printf("fineamount:%d\n",fineamount);
+     return 0;}
+
+                     
+    
