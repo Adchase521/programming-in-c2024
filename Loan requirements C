@@ -1,0 +1,23 @@
+//Program to outline loan requirements.
+/*
+Program to outline loan requirements.
+Accounts Manager: Mylar Linn
+Date: 28/9/2024
+*/
+//preprocessor directive - scanf() ,printf()
+#include<stdio.h>
+int main () {
+int  age;
+float monthlyincome;
+printf("Enter the age:");
+scanf("%d",&age);
+printf("Enter the monthlyincome:");
+scanf("%f",&monthlyincome);
+   if(age >= 21||monthlyincome >= 21000){
+   printf("Congratulations,you qualify for a loan.");
+   }
+   else{
+ printf("Unfortunately, we are unable to offer you a loan at this time.");
+   }
+   return 0;
+   }
