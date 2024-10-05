@@ -1,0 +1,24 @@
+//while loop - Input values for when to start, step and stop.
+/*
+Program for loop
+Author: Axel Chase 
+Registration number : 92Z67
+Date : 5/10/2024
+*/
+//preprocessor directive - scanf() , printf()
+#include<stdio.h>
+int main () {
+    //Decleration and initialization 
+    int start,sum,stop;
+    printf("Enter the value for when start:");
+    scanf("%d",&start);
+    printf("Enter the value for when to stop:");
+    scanf("%d",&stop);
+    while(start<stop){
+    printf("%d\n",start);
+    //Calculate the sum
+    sum = start+start++;
+    }
+    printf("The sum is %d",sum);
+    return 0;
+    }
