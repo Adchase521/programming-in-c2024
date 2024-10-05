@@ -1,0 +1,26 @@
+//do while - Input the values determining where to start step and stop.
+/*
+//Program to input values for loops.
+Author: Axel Chase
+Registration number: 92Z67 
+Date: 5/10/2024
+*/
+//preprocessor directive - scanf() , printf()
+#include<stdio.h>
+int main (){
+    int start ,sum,stop;
+    printf("Enter the value for when to start:");
+    scanf("%d,",&start);
+    printf("Enter the value for when to stop:");
+    scanf("%d,",&stop);
+    do{
+    printf("%d\n",start);
+        start++;
+        sum +=start;
+        
+      
+     }while (start<=stop);   
+     
+     printf("The sum is %d\n",sum);
+     return 0;
+}        
