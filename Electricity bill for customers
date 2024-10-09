@@ -1,0 +1,55 @@
+//Program to calculate and display the electricity bill for several customers.
+/*
+Program to calculate electricity Bill. 
+Finance Manager: Micah Martin 
+Date:5/10/2024
+*/
+//preprocessor directive - scanf() , printf()
+#include<stdio.h>
+#include<string.h>
+int main ()
+    {
+    int CustomerID;
+    int UnitsConsumed;
+    char CustomerName[10]={};
+    float Totalbillamount;
+    float Chargerate;
+    
+    //Input CustomerID, CustomerName and UnitsConsumed.
+    printf("Enter the CustomerID:");
+    scanf("%d",&CustomerID);
+    printf("Enter the CustomerName:");
+    scanf("%s",&CustomerName);
+    printf("Enter the UnitsConsumed:");
+    scanf("%d",&UnitsConsumed);
+    
+    //Determine the Chargerate and calculate the Bill amount.
+    
+    if(UnitsConsumed <= 199){Chargerate = 1.20;}
+    
+    if(UnitsConsumed >199 < 400){Chargerate = 1.50;}
+    
+    
+    if(UnitsConsumed >= 400 < 600){Chargerate=1.80;}
+    
+    if(UnitsConsumed >= 600){Chargerate=2.00;}
+    
+    //Calculate the Bill amount 
+    
+    Totalbillamount = UnitsConsumed*Chargerate;
+    
+    //Determine the Total bill amount with effects from Surcharge rate.
+    
+    if(Totalbillamount >400){Totalbillamount += Totalbillamount*0.15;}
+    
+    //Display the output results.
+    
+    printf("CustomerID:%d\n",CustomerID);
+    printf("CustomerName:%s\n",CustomerName);
+    printf("UnitsConsumed:%d\n",UnitsConsumed);
+    printf("Totalbillamount:%.2f\n",Totalbillamount);
+    return 0;
+    }
+    
+    
+    
