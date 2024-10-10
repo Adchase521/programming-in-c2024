@@ -11,10 +11,13 @@ int main ()
     {
     int CustomerID;
     int UnitsConsumed;
-    char CustomerName[10]={};
+    char CustomerName[10];
+    float Billamount;
+    float minimumamount = 100;
     float Totalbillamount;
     float Chargerate;
-    
+    float Surchargerate = 15;
+    float Surchargeamount;
     //Input CustomerID, CustomerName and UnitsConsumed.
     printf("Enter the CustomerID:");
     scanf("%d",&CustomerID);
@@ -25,31 +28,51 @@ int main ()
     
     //Determine the Chargerate and calculate the Bill amount.
     
-    if(UnitsConsumed <= 199){Chargerate = 1.20;}
+    if(UnitsConsumed <= 199){Chargerate = 1.20;
+    Billamount = Chargerate*UnitsConsumed;
+    printf("The Billamount is:%.2f\n",Billamount);
+    }
+    else if(UnitsConsumed  < 400){Chargerate = 1.50;
+    Billamount = Chargerate*UnitsConsumed;
+    printf("The Billamount is:%.2f\n",Billamount);
+    }
     
-    if(UnitsConsumed >199 < 400){Chargerate = 1.50;}
     
-    
-    if(UnitsConsumed >= 400 < 600){Chargerate=1.80;}
-    
-    if(UnitsConsumed >= 600){Chargerate=2.00;}
-    
+    else if(UnitsConsumed < 600){Chargerate=1.80;
+    Billamount = Chargerate*UnitsConsumed;
+    printf("The Billamount is:%.2f\n",Billamount);
+    }
+    else {Chargerate=2.00;
+    Billamount = Chargerate*UnitsConsumed;
+    printf("The Billamount is:%.2f\n",Billamount);
+    }
     //Calculate the Bill amount 
     
     Totalbillamount = UnitsConsumed*Chargerate;
     
     //Determine the Total bill amount with effects from Surcharge rate.
+    if(Billamount<100){
+    printf("The minimum amount is :%.2f\n", minimumamount);
+    }
+    if(Billamount>400){Surchargeamount=Billamount*Surchargerate/100;
+    printf("The Surcharge amount is:%.2f\n", Surchargeamount);
     
-    if(Totalbillamount >400){Totalbillamount += Totalbillamount*0.15;}
+    Totalbillamount = Billamount + Surchargeamount;
+    printf("The Totalbillamount is:%.2f\n"); 
+    }
     
     //Display the output results.
     
-    printf("CustomerID:%d\n",CustomerID);
+    printf("CustomerID:%d\n",CustomerID); 
     printf("CustomerName:%s\n",CustomerName);
     printf("UnitsConsumed:%d\n",UnitsConsumed);
+    printf("Chargerate:%.2f\n",Chargerate);
     printf("Totalbillamount:%.2f\n",Totalbillamount);
     return 0;
     }
+    
+    
+    
     
     
     
