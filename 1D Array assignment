@@ -1,0 +1,17 @@
+//C arrays - 1D arrays 
+/*
+//Program to create 1D arrays for sierverts.
+Author: Adrian Chase
+Reg.No.:56097
+Date: 12/10/24
+*/
+//preprocessor directive - scanf() , printf()
+#include<stdio.h>
+int main (){
+    int a;
+int sierverts[7] = {50,60,90,10,70,80,20};
+    for(a=0;a<7;a++){
+    printf("Sierverts[%d] = %d\n",a,sierverts[a]);
+    }
+    return 0;
+    }
