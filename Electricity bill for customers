@@ -58,7 +58,7 @@ int main ()
     printf("The Surcharge amount is:%.2f\n", Surchargeamount);
     
     Totalbillamount = Billamount + Surchargeamount;
-    printf("The Totalbillamount is:%.2f\n"); 
+    printf("The Totalbillamount is:%.2f\n",Totalbillamount); 
     }
     
     //Display the output results.
