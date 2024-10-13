@@ -1,0 +1,20 @@
+//C arrays - 2D arrays 
+/*
+//Program to create 2D arrays for Candelas.
+Radiologist:Seamus Cummingsworth.
+Registration number:54380
+Date: 12/10/2024
+*/
+//preprocessor directive - scanf(),printf()
+#include<stdio.h>
+int main (){
+    int a;
+    int b;
+int candelas [3][4] = {{32,27,46,59},{54,53,44,35},{34,67,53,24}};
+    for(a=0;a<3;a++){
+    for(b=0;b<4;b++){
+    printf("Candelas[%d][%d] = %d\n",a,b,candelas[a][b]);
+    }
+    }
+    return 0;
+    }
