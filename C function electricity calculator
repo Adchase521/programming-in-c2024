@@ -1,0 +1,108 @@
+//Program to calculate and display the electricity bill for several customers.
+/*
+Program to calculate electricity Bill. 
+Finance Manager: Micah Martin 
+Date:5/10/2024
+*/
+//preprocessor directive - scanf() , printf()
+#include<stdio.h>
+#include<math.h>
+ 
+//Function prototype 
+float CalculateTotalbillamount(float Billamount,float Surchargeamount);
+float CalculateBillamount(float Chargerate,int UnitsConsumed);
+float CalculateSurchargeamount(float Billamount,float Surchargerate);
+ 
+int main ()
+    {
+    int CustomerID;
+    int UnitsConsumed;
+    char CustomerName[10];
+    float Billamount;
+    float minimumamount = 100;
+    float Totalbillamount;
+    float Chargerate;
+    float Surchargerate = 15;
+    float Surchargeamount;
+    
+    //Input CustomerID, CustomerName and UnitsConsumed.
+    printf("Enter the CustomerID:");
+    scanf("%d",&CustomerID);
+    printf("Enter the CustomerName:");
+    scanf("%s",&CustomerName);
+    printf("Enter the UnitsConsumed:");
+    scanf("%d",&UnitsConsumed);
+    
+    
+    //Function definition 
+    //Determine the Chargerate and calculate the Bill amount.
+    
+    if( UnitsConsumed <= 199){Chargerate = 1.20;
+    Billamount = Chargerate*UnitsConsumed;
+    printf("The CustomerID is:%d\n",CustomerID);
+    printf("The CustomerName is:%s\n",CustomerName);
+    printf("The UnitsConsumed are:%d\n",UnitsConsumed);
+    printf("The Chargerate is:%.2f\n",Chargerate);
+    printf("The Totalbillamount is:%.2f\n",Billamount);
+    return UnitsConsumed*1.20;
+    }
+    else if(UnitsConsumed  < 400){Chargerate = 1.50;
+    Billamount = Chargerate*UnitsConsumed;
+    printf("The CustomerID is:%d\n",CustomerID);
+    printf("The CustomerName is:%s\n",CustomerName);
+    printf("The UnitsConsumed are:%d\n",UnitsConsumed);
+    printf("The Chargerate is:%.2f\n",Chargerate);
+    printf("The Totalbillamount is:%.2f\n",Billamount);
+    return UnitsConsumed*1.50;
+    }
+    
+    
+    else if(UnitsConsumed < 600){Chargerate=1.80;
+    Billamount = Chargerate*UnitsConsumed;
+    
+    printf("The CustomerID is:%d\n",CustomerID);
+    printf("The CustomerName is:%s\n",CustomerName);
+    printf("The UnitsConsumed are:%d\n",UnitsConsumed);
+    printf("The Chargerate is:%.2f\n",Chargerate);
+    printf("The Totalbillamount is:%.2f\n",Billamount);
+    return UnitsConsumed*1.80;
+    }
+    
+    else {Chargerate=2.00;
+    Billamount = Chargerate*UnitsConsumed;
+    printf("The CustomerID is:%d\n",CustomerID);
+    printf("The CustomerName is:%s\n",CustomerName);
+    printf("The UnitsConsumed are:%d\n",UnitsConsumed);
+    printf("The Chargerate is:%.2f\n",Chargerate);
+    printf("The Totalbillamount is :%.2f\n",Billamount);
+    return UnitsConsumed*2.00;
+    }
+    //Calculate the Totalbillamount .
+    
+    Totalbillamount = UnitsConsumed*Chargerate;
+    
+    //Determine the Total bill amount with effects from Surcharge rate.
+    if(Billamount<100){
+    printf("The minimum amount is :%.2f\n", minimumamount);
+    return minimumamount;
+    }
+    if(Billamount>400){Surchargeamount=Billamount*Surchargerate/100;
+    printf("The Surcharge amount is:%.2f\n", Surchargeamount);
+    return Billamount*Surchargerate/100;
+    
+    Totalbillamount = Billamount + Surchargeamount;
+    printf("The Totalbillamount is:%.2f\n",Totalbillamount);
+    return Billamount+Surchargeamount; 
+    }
+    
+    
+    //Display the output results.
+    
+    printf("CustomerID:%d\n",CustomerID); 
+    printf("CustomerName:%s\n",CustomerName);
+    printf("UnitsConsumed:%d\n",UnitsConsumed);
+    printf("Chargerate:%.2f\n",Chargerate);
+    printf("Totalbillamount:%.2f\n",Totalbillamount);
+    
+    return 0;
+    }
